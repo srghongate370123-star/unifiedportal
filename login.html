@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unified Tender & Marketplace | Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page page--auth">
+  <div class="auth-layout">
+    <section class="auth-hero">
+      <header class="brand">
+        <div class="brand__logo">UP</div>
+        <div class="brand__text">
+          <span class="brand__title">Unified Portal</span>
+          <span class="brand__subtitle">Tenders & Material Marketplace</span>
+        </div>
+      </header>
+
+      <div class="auth-hero__content">
+        <h1 class="auth-hero__title">Welcome to the B2B Ecosystem</h1>
+        <p class="auth-hero__subtitle">
+          Manage public & private tenders and source industrial materials in one unified workspace.
+        </p>
+
+        <div class="auth-hero__cards">
+          <article class="hero-card">
+            <div class="hero-card__pill">Tender Portal</div>
+            <h2 class="hero-card__title">Formal Procurement & e-Bidding</h2>
+            <p class="hero-card__body">
+              Discover, evaluate and participate in government & enterprise tenders with transparent workflows.
+            </p>
+            <ul class="hero-card__list">
+              <li>Search active tenders by category & location</li>
+              <li>Upload technical & financial bid documents</li>
+              <li>Track bid status and clarifications</li>
+            </ul>
+          </article>
+
+          <article class="hero-card">
+            <div class="hero-card__pill hero-card__pill--green">Material Marketplace</div>
+            <h2 class="hero-card__title">Industrial Material Catalog</h2>
+            <p class="hero-card__body">
+              Browse verified suppliers for construction, MEP, electricals, safety and more. RFQs only – no payments.
+            </p>
+            <ul class="hero-card__list">
+              <li>Compare specifications & indicative prices</li>
+              <li>Send enquiries / RFQs to multiple suppliers</li>
+              <li>No online checkout or payment gateway</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+      <footer class="auth-hero__footer">
+        <div class="auth-footnote">
+          <span class="auth-footnote__label">How it works</span>
+          <div class="auth-footnote__steps">
+            <div class="auth-footnote__step">
+              <span class="auth-footnote__step-title">Register</span>
+              <span class="auth-footnote__step-text">
+                Create your organization profile and complete KYC verification.
+              </span>
+            </div>
+            <div class="auth-footnote__step">
+              <span class="auth-footnote__step-title">Discover</span>
+              <span class="auth-footnote__step-text">
+                Search tenders or materials by keyword, category and location.
+              </span>
+            </div>
+            <div class="auth-footnote__step">
+              <span class="auth-footnote__step-title">Bid & Enquire</span>
+              <span class="auth-footnote__step-text">
+                Submit bids or send RFQs. All commercial negotiations happen offline.
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <main class="auth-panel" aria-labelledby="login-heading">
+      <div class="auth-panel__inner">
+        <h1 id="login-heading" class="auth-panel__title">Sign in to Unified Portal</h1>
+        <p class="auth-panel__subtitle">
+          Use your registered business email or mobile number to continue.
+        </p>
+
+        <form class="form" action="dashboard.html" method="get">
+          <div class="form__field">
+            <label for="userType" class="form__label">Login as</label>
+            <div class="segmented-control">
+              <input type="radio" name="role" id="role-buyer" value="buyer" checked />
+              <label for="role-buyer">Buyer / Tendering Entity</label>
+
+              <input type="radio" name="role" id="role-seller" value="seller" />
+              <label for="role-seller">Supplier / Vendor</label>
+            </div>
+          </div>
+
+          <div class="form__field">
+            <label for="identifier" class="form__label">Business Email or Mobile</label>
+            <input
+              id="identifier"
+              name="identifier"
+              type="text"
+              class="input"
+              placeholder="name@company.com or +91-98765 43210"
+              required
+            />
+          </div>
+
+          <div class="form__field">
+            <label for="password" class="form__label">Password</label>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              class="input"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+
+          <div class="form__meta">
+            <label class="checkbox">
+              <input type="checkbox" name="remember" checked />
+              <span>Keep me signed in on this device</span>
+            </label>
+            <a href="#" class="link">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--block">
+            Continue to Dashboard
+          </button>
+
+          <div class="form__divider">
+            <span>OR</span>
+          </div>
+
+          <button type="button" class="btn btn--outline btn--block">
+            Sign in with Digital Certificate
+          </button>
+
+          <p class="form__hint">
+            By signing in you confirm that commercial negotiations, purchase orders and payments
+            will be executed outside this portal through your own contracting process.
+          </p>
+        </form>
+
+        <div class="auth-panel__footer">
+          <p class="auth-panel__text">
+            New to the portal?
+            <a href="#" class="link">Create organization account</a>
+          </p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Placeholder: no real authentication, just client-side role persistence.
+    const form = document.querySelector('.form');
+    form?.addEventListener('submit', (e) => {
+      const role = document.querySelector('input[name="role"]:checked');
+      if (role && 'value' in role) {
+        sessionStorage.setItem('userRole', role.value);
+      }
+    });
+  </script>
+</body>
+</html>
+

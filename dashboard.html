@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unified Portal | Buyer Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="page page--dashboard">
+  <header class="topbar">
+    <div class="topbar__left">
+      <a href="login.html" class="brand brand--compact">
+        <div class="brand__logo">UP</div>
+        <div class="brand__text">
+          <span class="brand__title">Unified Portal</span>
+          <span class="brand__subtitle">Unified Procurement View</span>
+        </div>
+      </a>
+    </div>
+    <div class="topbar__center">
+      <div class="topbar__tabs" role="tablist">
+        <button class="topbar-tab topbar-tab--active" data-view="tenders">Tender Workspace</button>
+        <button class="topbar-tab" data-view="marketplace">Material Marketplace</button>
+      </div>
+    </div>
+    <div class="topbar__right">
+      <button class="icon-btn" aria-label="Search">
+        🔍
+      </button>
+      <button class="icon-btn" aria-label="Notifications">
+        🔔
+        <span class="badge">4</span>
+      </button>
+      <div class="avatar">
+        <span class="avatar__circle">VB</span>
+        <div class="avatar__meta">
+          <span class="avatar__name">Buyer Account</span>
+          <span class="avatar__role">Super Admin</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav class="sidebar">
+      <div class="sidebar__group">
+        <span class="sidebar__label">Tendering</span>
+        <a href="#" class="sidebar__item sidebar__item--active">Dashboard</a>
+        <a href="#" class="sidebar__item">Discover Tenders</a>
+        <a href="#" class="sidebar__item">My Tenders</a>
+     
+      </div>
+      <div class="sidebar__group">
+        <span class="sidebar__label">Materials</span>
+        <a href="#" class="sidebar__item">Material Catalog</a>
+
+      </div>
+      <div class="sidebar__group">
+        <span class="sidebar__label">Administration</span>
+        <a href="#" class="sidebar__item">Org Profile</a>
+        <a href="#" class="sidebar__item">User & Roles</a>
+        <a href="#" class="sidebar__item">Audit Logs</a>
+      </div>
+    </nav>
+
+    <main class="content" id="content">
+      <!-- Tender dashboard view -->
+      <section class="view view--active" id="view-tenders">
+        <header class="content__header">
+          <div>
+            <h1 class="content__title">Buyer Dashboard</h1>
+            <p class="content__subtitle">
+              Monitor live tenders, bids and supplier clarifications in one place.
+            </p>
+          </div>
+          <button class="btn btn--primary">
+            + Create New Tender
+          </button>
+        </header>
+
+        <section class="grid grid--3">
+          <article class="stat-card">
+            <div class="stat-card__label">Active Tenders</div>
+            <div class="stat-card__value">12</div>
+            <div class="stat-card__meta">
+              <span class="pill pill--blue">+2 new this week</span>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-card__label">Pending Bids</div>
+            <div class="stat-card__value">45</div>
+            <div class="stat-card__meta">
+              <span class="pill pill--purple">13 closing in 3 days</span>
+            </div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-card__label">Open Clarifications</div>
+            <div class="stat-card__value">9</div>
+            <div class="stat-card__meta">
+              <span class="pill pill--orange">Response SLA: 24 hrs</span>
+            </div>
+          </article>
+        </section>
+
+        <section class="split">
+          <div class="split__left">
+            <header class="section-header">
+              <h2 class="section-header__title">Tender Activities</h2>
+              <button class="link-btn">View all</button>
+            </header>
+
+            <div class="card-list">
+              <article class="list-card">
+                <div class="list-card__header">
+                  <span class="pill pill--blue">Infrastructure</span>
+                  <span class="status status--success">Published</span>
+                </div>
+                <h3 class="list-card__title">Smart City Road Construction</h3>
+                <p class="list-card__meta">
+                  ID: TND-2024-089 &bull; Closes in 12 hrs
+                </p>
+                <div class="list-card__footer">
+                  <span class="list-card__tag">24 bids received</span>
+                  <button class="btn btn--ghost">Manage</button>
+                </div>
+              </article>
+
+              <article class="list-card">
+                <div class="list-card__header">
+                  <span class="pill pill--purple">Technology</span>
+                  <span class="status status--info">Evaluation</span>
+                </div>
+                <h3 class="list-card__title">IT Hardware Refresh</h3>
+                <p class="list-card__meta">
+                  ID: TND-2024-015 &bull; 12 bids under technical review
+                </p>
+                <div class="list-card__footer">
+                  <span class="list-card__tag">Last touched: 2 hrs ago</span>
+                  <button class="btn btn--ghost">Continue</button>
+                </div>
+              </article>
+
+              <article class="list-card">
+                <div class="list-card__header">
+                  <span class="pill pill--teal">Logistics</span>
+                  <span class="status status--muted">Draft</span>
+                </div>
+                <h3 class="list-card__title">Annual Fleet Outsourcing</h3>
+                <p class="list-card__meta">
+                  ID: TND-2024-032 &bull; Draft ready for internal review
+                </p>
+                <div class="list-card__footer">
+                  <span class="list-card__tag">Not yet published</span>
+                  <button class="btn btn--ghost">Review draft</button>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="split__right">
+            <header class="section-header">
+              <h2 class="section-header__title">Material Orders Snapshot</h2>
+              <button class="link-btn">Track all</button>
+            </header>
+
+            <div class="card-list">
+              <article class="order-card">
+                <div class="order-card__top">
+                  <div>
+                    <h3 class="order-card__title">Industrial Steel Pipes</h3>
+                    <p class="order-card__meta">ORD-88291 &bull; 10 MT &bull; Standard delivery</p>
+                  </div>
+                  <div class="order-card__value">₹12,45,000</div>
+                </div>
+                <div class="order-card__status">
+                  <span class="status status--info">In transit</span>
+                  <span class="order-card__eta">ETA: 18 Oct 2023</span>
+                </div>
+                <div class="progress">
+                  <div class="progress__bar" style="width: 65%"></div>
+                </div>
+              </article>
+
+              <article class="order-card">
+                <div class="order-card__top">
+                  <div>
+                    <h3 class="order-card__title">Ready-Mix Concrete (M30)</h3>
+                    <p class="order-card__meta">ORD-88304 &bull; 80 m³ &bull; Express delivery</p>
+                  </div>
+                  <div class="order-card__value">₹8,70,000</div>
+                </div>
+                <div class="order-card__status">
+                  <span class="status status--processing">Processing</span>
+                  <span class="order-card__eta">ETA: 21 Oct 2023</span>
+                </div>
+                <div class="progress">
+                  <div class="progress__bar" style="width: 30%"></div>
+                </div>
+              </article>
+            </div>
+
+      </section>
+
+      <!-- Marketplace discovery view -->
+      <section class="view" id="view-marketplace" aria-hidden="true">
+        <header class="content__header">
+          <div>
+            <h1 class="content__title">Material Marketplace</h1>
+            <p class="content__subtitle">
+              Browse verified suppliers and send RFQs for project materials. No online checkout.
+            </p>
+          </div>
+          <button class="btn btn--primary">
+            + Create RFQ
+          </button>
+        </header>
+
+        <div class="toolbar">
+          <div class="toolbar__search">
+            <input
+              type="search"
+              class="input"
+              placeholder="Search materials, brands or suppliers"
+            />
+          </div>
+          <div class="toolbar__filters">
+            <button class="chip chip--active">All Categories</button>
+            <button class="chip">Civil & Construction</button>
+            <button class="chip">Electrical</button>
+            <button class="chip">Plumbing</button>
+            <button class="chip">Safety</button>
+          </div>
+        </div>
+
+        <section class="grid grid--3">
+          <article class="product-card">
+            <span class="product-card__badge">Top Seller</span>
+            <h3 class="product-card__title">Grade A Cement (53 Grade)</h3>
+            <p class="product-card__meta">Bag &bull; Min. order: 200 bags</p>
+            <div class="product-card__price">₹295 / bag (indicative)</div>
+            <p class="product-card__supplier">Supplied by: MetroCem Industries</p>
+            <button class="btn btn--outline btn--block">Request Best Quote</button>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge">Project Rate</span>
+            <h3 class="product-card__title">TMT Steel Bars (Fe500, 12mm)</h3>
+            <p class="product-card__meta">Bundle &bull; Min. order: 5 MT</p>
+            <div class="product-card__price">₹68,500 / MT (indicative)</div>
+            <p class="product-card__supplier">Supplied by: Tata Steel Channel Partner</p>
+            <button class="btn btn--outline btn--block">Request Best Quote</button>
+          </article>
+
+          <article class="product-card">
+            <span class="product-card__badge">New Supplier</span>
+            <h3 class="product-card__title">Copper Wiring (1.5 sq.mm)</h3>
+            <p class="product-card__meta">Roll &bull; Min. order: 50 rolls</p>
+            <div class="product-card__price">₹1,240 / roll (indicative)</div>
+            <p class="product-card__supplier">Supplied by: Finolex Authorised Distributor</p>
+            <button class="btn btn--outline btn--block">Add to RFQ List</button>
+          </article>
+        </section>
+
+        <section class="panel">
+          <header class="panel__header">
+            <h2 class="panel__title">RFQs in Draft</h2>
+            <button class="link-btn">View all RFQs</button>
+          </header>
+
+          <div class="rfq-list">
+            <article class="rfq-item">
+              <div>
+                <h3 class="rfq-item__title">Civil Package – Phase II</h3>
+                <p class="rfq-item__meta">4 materials &bull; 6 shortlisted suppliers</p>
+              </div>
+              <button class="btn btn--ghost">Continue RFQ</button>
+            </article>
+            <article class="rfq-item">
+              <div>
+                <h3 class="rfq-item__title">Electrical BoQ – Admin Block</h3>
+                <p class="rfq-item__meta">12 materials &bull; 8 shortlisted suppliers</p>
+              </div>
+              <button class="btn btn--ghost">Open RFQ</button>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Simple tab switching between tenders and marketplace
+    const tabs = document.querySelectorAll('.topbar-tab');
+    const tenderView = document.getElementById('view-tenders');
+    const marketplaceView = document.getElementById('view-marketplace');
+
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => t.classList.remove('topbar-tab--active'));
+        tab.classList.add('topbar-tab--active');
+
+        const view = tab.getAttribute('data-view');
+        const isMarketplace = view === 'marketplace';
+
+        tenderView?.classList.toggle('view--active', !isMarketplace);
+        marketplaceView?.classList.toggle('view--active', isMarketplace);
+
+        if (isMarketplace) {
+          marketplaceView?.setAttribute('aria-hidden', 'false');
+          tenderView?.setAttribute('aria-hidden', 'true');
+        } else {
+          tenderView?.setAttribute('aria-hidden', 'false');
+          marketplaceView?.setAttribute('aria-hidden', 'true');
+        }
+      });
+    });
+
+    // Role-aware heading based on login selection
+    const role = sessionStorage.getItem('userRole');
+    if (role === 'seller') {
+      document.title = 'Unified Portal | Supplier Dashboard';
+      const titleEl = document.querySelector('.content__title');
+      const subtitleEl = document.querySelector('.content__subtitle');
+      if (titleEl) titleEl.textContent = 'Supplier Dashboard';
+      if (subtitleEl) {
+        subtitleEl.textContent =
+          'Track invited tenders, submitted bids and buyer enquiries from a single workspace.';
+      }
+    }
+  </script>
+</body>
+</html>
+
