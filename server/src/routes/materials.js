@@ -492,7 +492,7 @@ router.post('/', requireAuth, requireRole('supplier'), async (req, res) => {
       state: typeof state === 'string' ? state.trim() : req.auth.state || '',
       address: typeof address === 'string' ? address.trim() : '',
       imageUrl: typeof imageUrl === 'string' ? imageUrl.trim() : '',
-      approvalStatus: 'pending',
+      approvalStatus: 'approved',
       category: typeof category === 'string' && category.trim() ? category.trim() : 'General',
       description: typeof description === 'string' ? description.trim() : ''
     };
