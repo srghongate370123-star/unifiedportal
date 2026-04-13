@@ -23,6 +23,12 @@ const PORT = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
+// Ensure DB is fully connected before hitting any route logic
+app.use(async (req, res, next) => {
+  await connectDB().catch(console.error);
+  next();
+});
+
 app.get('/', (req, res) => {
   res.json({ status: 'ok', service: 'unified-portal-api' });
 });
