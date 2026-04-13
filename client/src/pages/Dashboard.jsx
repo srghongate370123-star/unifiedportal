@@ -57,15 +57,15 @@ function DashboardLayout({ user, onLogout }) {
         <div className="topbar__right">
           <div className="avatar">
             <span className="avatar__circle">
-              {user.name
+              {(user.name || 'User')
                 .split(' ')
-                .map((p) => p[0])
+                .map((p) => p[0] || '')
                 .join('')
                 .slice(0, 2)
                 .toUpperCase()}
             </span>
             <div className="avatar__meta">
-              <span className="avatar__name">{user.name}</span>
+              <span className="avatar__name">{user.name || 'User'}</span>
               <span className="avatar__role">
                 {isAdmin ? 'Admin' : isBuyer ? 'Buyer / Department' : 'Supplier'}
               </span>
