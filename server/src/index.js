@@ -36,13 +36,16 @@ app.use('/api/admin', adminRouter);
 app.use('/api', messagesRouter);
 app.use('/api', notificationsRouter);
 
-const startServer = async () => {
-  await connectDB();
-  verifyMailConfig().catch(() => {});
+// Initialize DB and mail for serverless environment
+connectDB().catch(console.error);
+verifyMailConfig().catch(() => {});
+
+// Only listen locally, Vercel will handle the exported app instance
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`API server listening on http://localhost:${PORT}`);
   });
-};
+}
 
-startServer();
+export default app;
 
