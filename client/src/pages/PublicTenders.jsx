@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
-import axios from 'axios';
+import axios from '../api/client.js';
 
 const SEED_CATEGORIES = [
   'All',

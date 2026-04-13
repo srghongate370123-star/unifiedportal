@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from '../../api/client.js';
 import { useNavigate, useOutletContext } from 'react-router-dom';
 
 function TenderingDashboard() {

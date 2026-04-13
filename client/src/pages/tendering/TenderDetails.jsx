@@ -1,6 +1,6 @@
 import React from 'react';
 import api from '../../api/client.js';
-import axios from 'axios';
+import axios from '../../api/client.js';
 import { Link, useNavigate, useOutletContext, useParams } from 'react-router-dom';
 
 const tenderClosed = (t) =>
